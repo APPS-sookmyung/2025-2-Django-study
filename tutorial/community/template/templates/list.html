@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Write Page</title>
+
+<body>
+    <ul>제목 | 저자 | 날짜<br>
+        {%for article in articleList%}
+        <li><a href="/view/{{article.id}}"></a>{{article.title}}</a> | {{article.name}} | {{article.cdate|date:"D d M
+            Y"}}</li>
+        {%endfor%}
+    </ul>
+</body>
+
+</html>
