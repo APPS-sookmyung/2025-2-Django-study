@@ -1,0 +1,20 @@
+h1{
+    color: aqua;
+    text-align: center;
+}
+
+table{
+    float: right; /*오른쪽 맨 끝으로 정렬*/
+    border: 2px solid #44444444;
+    border-collapse: collapse; /*테이블 선 겹치지 않게*/
+}
+
+thead{
+    background-color: bisque;
+}
+
+
+td{
+    text-align: center;
+
+}
