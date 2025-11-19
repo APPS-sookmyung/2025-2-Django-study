@@ -62,4 +62,47 @@
 
 ### 데이터베이스 종류
 
-- 데이터베이스느
+- 관계형 데이터베이스
+  - MySQL, MS-SQL, Maria DB, SQLite
+- NoSQL 데이터베이스
+  - Document - MongoDB: collection 데이터 모델 구조
+  - Key-Redis: 키와 값의 데이터가 쌍으로 저장되는 단순 구조
+  - Big Table - Hbase:키-값 형에서 column family 모델 구조
+- 계층형, 네트워크 등
+
+### Mongo DB
+
+- 데이터 객체가 컬렉션 내부에서 독립된 문서로 저장되는 문서 모델 기반 NoSQL DB
+  몽고 DB는 컬렉션을 사용해 데이터를 하나로 묶음 - 컬렉션: 용도가 같거나 유사한 문서 그룹화, 기존 SQL DB 테이블처럼 동작ㄱ
+- 문서: 몽고 DB 내 하나의 실제 데이터
+  - 문서는 내부 하위 문서 포함, 앱에 가까운 고유 데이터 모델 제공, Bson으로 저장
+- 몽고 DB's feature
+  - 필드 이름: null, 점, $ 불가능
+  - 최대 문서 크기: 16MB
+- 기본 포트 27017번 사용
+- 동적 스키마
+
+### Robomongo 3T 설치
+
+- MongoDB 관리 도구로 CLI 환경 작업을 GUI 버전으로 제공
+
+### RDBMS와 MongoDB 비교
+
+- 개념/서버와 클라이언트 주제
+
+| RDB(MySQL)  | MongoDB                      |
+| ----------- | ---------------------------- |
+| Database    | Database                     |
+| Table       | Collection                   |
+| Tuple / Row | Document or BSON document    |
+| Column      | Field                        |
+| Table Join  | Embedded Documents & Linking |
+| Primary Key | Primary Key (\_id)           |
+
+- SQL 질의문 차이
+  | 연산 | RDB(MySQL) | MongoDB |
+  |--------|---------------------------------------------------------|------------------------------------------------------------------|
+  | Insert | `insert into users ("name", "city") values("lee", "seoul")` | `db.users.insert({ name: "lee", city: "seoul" })` |
+  | Select | `select * from users where name="lee"` | `db.users.find({ name: "lee" })` |
+  | Update | `update users set city="busan" where name="lee"` | `db.users.update({ name: "lee" }, { $set: { city: "busan" } })` |
+  | Delete | `delete from users where name="lee"` | `db.users.remove({ name: "lee" })` |

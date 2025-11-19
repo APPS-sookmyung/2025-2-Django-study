@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>스케줄 등록</title>
+    <link
+      rel="stylesheet"
+      href="//code.jquery.com/ui/1.13.0/themes/base/jquery-ui.css"
+    />
+  </head>
+  <body>
+    <h1>스케줄 등록</h1>
+    <form method="POST">
+      <p>
+        날짜: <input type="text" id="datepicker-start" name="start" required />
+        ~
+        <input type="text" id="datepicker-end" name="end" required />
+      </p>
+      <p>할일: <input type="text" name="title" required /></p>
+      <p>
+        <input type="submit" value="등록" />
+      </p>
+    </form>
+    <h2>등록된 일정</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>시작일</th>
+          <th>종료일</th>
+          <th>할일</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for event in schedule %}
+        <tr>
+          <td>{{ event['start'] }}</td>
+          <td>{{ event['end'] }}</td>
+          <td>{{ event['title'] }}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+    <script src="//code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="//code.jquery.com/ui/1.13.0/jquery-ui.min.js"></script>
+    <script>
+      $(function () {
+        $("#datepicker-start").datepicker({ dateFormat: "yy-mm-dd" });
+        $("#datepicker-end").datepicker({ dateFormat: "yy-mm-dd" });
+      });
+    </script>
+  </body>
+</html>

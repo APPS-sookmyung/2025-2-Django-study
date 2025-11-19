@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Movie Search</title>
+  </head>
+  <body>
+    <form action="{{ url_for('search') }}" method="GET">
+      <label>Enter a movie name:</label>
+      <input type="text" name="query" />
+      <input type="submit" value="Search" />
+    </form>
+  </body>
+</html>

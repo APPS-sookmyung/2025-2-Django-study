@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>엑셀 파일 번역 서비스</title>
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
+    <style>
+      .container {
+        margin-top: 50px;
+      }
+      h1 {
+        text-align: center;
+        margin-bottom: 50px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>엑셀 파일 번역 서비스</h1>
+      <form action="/upload" method="post" enctype="multipart/form-data">
+        <div class="form-group">
+          <label for="file">번역할 파일을 업로드 하세요.</label>
+          <input type="file" class="form-control-file" id="file" name="file" />
+        </div>
+        <input type="submit" value="업로드" class="btn btn-primary" />
+      </form>
+    </div>
+  </body>
+</html>
