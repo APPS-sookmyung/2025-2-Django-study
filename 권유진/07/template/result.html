@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Weather Result</title>
+</head>
+
+<body>
+    <h1>Weather in {{ city }}</h1>
+    <p>Temperature: {{ temp }}°C</p>
+    <p>Feels Like: {{ feels_like }}°C</p>
+
+    <!-- 맵 추가-->
+    <iframe src="{{ url_for('static', filename='weather_map.html')}}" height="400" width="600"></iframe>
+</body>
+
+</html>

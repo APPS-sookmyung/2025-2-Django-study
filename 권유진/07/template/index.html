@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>도시 날씨 알리미</title>
+</head>
+
+<body>
+    <h1>도시 날씨 알리미</h1>
+    <form method="POST" action="/">
+        <label for="city">도시 이름을 입력하세요:</label>
+        <input type="text" name="city" id="city" required>
+        <input type="submit" value="날씨 조회">
+    </form>
+
+    <h2>저장된 날씨 정보</h2>
+    <ul>
+        {% for weather in weathers %}
+        <li>{{ weather.city }}: {{ weather.temperature }}°C 체감온도: {{wheather.feels_temp}}</li>
+        {% endfor %}
+</body>
+
+</html>
